@@ -50,16 +50,34 @@
 //     alert('hello')
 // }
 
-let diemthi = prompt ('Số điểm')
-if (diemthi <=4 ){
-    alert ('Trung Bình');
-}
-else if (diemthi <=7 ) {
-    alert('Khá');
-}
-else if (diemthi <=10){
-    alert ('Giỏi')
-}
-else if (diemthi =10) {
-    alert ('Xuất sắc')
-}
+// let diemthi = prompt ('Số điểm')
+// if (diemthi <=4 ){
+//     alert ('Trung Bình');
+// }
+// else if (diemthi <=7 ) {
+//     alert('Khá');
+// }
+// else if (diemthi <=10){
+//     alert ('Giỏi')
+// }
+// else if (diemthi =10) {
+//     alert ('Xuất sắc')
+// }
+//vòng lặp 
+//while //do while
+//for
+//for in
+
+//array 
+let lop = [
+    'JSB',
+    'JSA',
+    'JSI'
+    ['JSB03', 'JSB01', 'JSB02']
+]
+// let so = [1,2,3,4,5]
+// console.log(lop);
+// console.log(lop[0]);
+let so = [6,7,8,9,10]
+//console.log(lop);
+//console.log(lop[3][1])
