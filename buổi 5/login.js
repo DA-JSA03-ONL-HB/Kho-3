@@ -1,35 +1,6 @@
-// const firebaseConfig = {
-//     apiKey: "AIzaSyA6Y1YA-VMPc-m2kJtuE7IMhf0qjt5H5gs",
-//     authDomain: "contacform-e260e.firebaseapp.com",
-//     databaseURL: "https://contacform-e260e-default-rtdb.firebaseio.com",
-//     projectId: "contacform-e260e",
-//     storageBucket: "contacform-e260e.appspot.com",
-//     messagingSenderId: "742278065025",
-//     appId: "1:742278065025:web:c3e134ecfa7094a313d680"
-//   };
-
-//   firebase.initializeApp(firebaseConfig);
-
-//   const contacFormDB = firebase.database().ref('contact')
-  
-//   document.getElementById('contactForm').addEventListener('submit',submitForm);
-
-
-//   function submitForm(e){
-//     e.preventDefault();
-//     var name = getElementVal('name');
-
-//   }
-
-//   const getElementVal = (id) => {
-//     return document.getElementById(id).value;
-//   }
-
-
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -59,11 +30,11 @@ submit.addEventListener('click', (event) => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
-            alert('Đăng ký...')
+            alert('Đăng nhập...')
             window.location.href = './index1.html'
             // ...
         })
