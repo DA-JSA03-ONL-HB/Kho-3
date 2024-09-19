@@ -10,31 +10,125 @@
 
 <body>
     <div class="nav">
-        <a href="" class="nav-item">Trang chủ</a>
-        <a href="" class="nav-item">Nhà Hàng</a>
-        <a href="" class="nav-item">Món ăn nổi tiếng</a>
+        <a href="../sản phẩm cuối khóa/trangchu.html" class="nav-item">Trang chủ</a>
+        <a href="../sản phẩm cuối khóa/nhahang.html" class="nav-item">Nhà Hàng</a>
+        <a href="../sản phẩm cuối khóa/monannoitieng.html" class="nav-item">Món ăn nổi tiếng</a>
 
     </div>
-
+        <div class="slide-item slide-item1">
+        </div>
+        <div class="slide-item slide-item2">
+        </div>
+        <div class="slide-item slide-item3">
+        </div>
+        <div class="slide-item slide-item4">
+        </div>
 
     <script>
-        // const data = null;
+        var myIndex = 0;
+        carousel();
+    
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("slide-item");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) { myIndex = 1 }
+          x[myIndex - 1].style.display = "block";
+          setTimeout(carousel, 4000);
+        }
+      </script>
 
-        // const xhr = new XMLHttpRequest();
-        // xhr.withCredentials = true;
-
-        // xhr.addEventListener('readystatechange', function () {
-        //     if (this.readyState === this.DONE) {
-        //         console.log(this.responseText);
-        //     }
-        // });
-
-        // xhr.open('GET', 'https://the-mexican-food-db.p.rapidapi.com/');
-        // xhr.setRequestHeader('x-rapidapi-key', '265e17224cmshdc788249ea24af8p1f07b8jsn377e42c3c812');
-        // xhr.setRequestHeader('x-rapidapi-host', 'the-mexican-food-db.p.rapidapi.com');
-
-        // xhr.send(data);
-    </script>
-</body>
-
+    </body>
+    <footer class="footer"></footer>
+    <div class="footer__addr">
+        <h1 class="footer__logo">WEB OF FOOD</h1>
+    
+        <h2>Contact</h2>
+    
+        <address>
+            Hà Nội<br>
+    
+            <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+        </address>
+    </div>
+    
+    <ul class="footer__nav">
+        <li class="nav__item">
+            <h2 class="nav__title">Media</h2>
+    
+            <ul class="nav__ul">
+                <li>
+                    <a href="#">Online</a>
+                </li>
+    
+                <li>
+                    <a href="#">Print</a>
+                </li>
+    
+                <li>
+                    <a href="#">Alternative Ads</a>
+                </li>
+            </ul>
+        </li>
+    
+        <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">FOOD</h2>
+    
+            <ul class="nav__ul nav__ul--extra">
+                <li>
+                    <a href="#">Hardware Design</a>
+                </li>
+    
+                <li>
+                    <a href="#">Software Design</a>
+                </li>
+    
+                <li>
+                    <a href="#">Digital Signage</a>
+                </li>
+    
+                <li>
+                    <a href="#">Automation</a>
+                </li>
+    
+                <li>
+                    <a href="#">Artificial Intelligence</a>
+                </li>
+    
+                <li>
+                    <a href="#">IoT</a>
+                </li>
+            </ul>
+        </li>
+    
+        <li class="nav__item">
+            <h2 class="nav__title">Legal</h2>
+    
+            <ul class="nav__ul">
+                <li>
+                    <a href="#">Privacy Policy</a>
+                </li>
+    
+                <li>
+                    <a href="#">Terms of Use</a>
+                </li>
+    
+                <li>
+                    <a href="#">Sitemap</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div class="legal">
+        <p>&copy; WELL-KNOW FOOD</p>
+    
+        <div class="legal__links">
+            <span>Made with <span class="heart">♥</span> remotely from MEXICO</span>
+        </div>
+    </div>
+    </footer>
 </html>

@@ -1,16 +1,54 @@
-const data = null;
+const url = 'https://the-mexican-food-db.p.rapidapi.com/';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '265e17224cmshdc788249ea24af8p1f07b8jsn377e42c3c812',
+		'x-rapidapi-host': 'the-mexican-food-db.p.rapidapi.com'
+	}
+};
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+async function getData() {
+	try {
+		const response = await fetch(url, options);
+		const result = await response.text();
+		var data = JSON.parse(result)
+		console.log(data[1].title);
 
-xhr.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-        console.log(this.responseText);
-    }
-});
+		for (items of data) {
+			let card = document. createElement("div")
+			card.classList.add("card")
+			let imgContainer = document.createElement("div")
+			imgContainer.classList.add("img-Container")
+			let image = document.createElement("img")
+			// name.classList.add("img")
+			image.setAttribute("src",items.image)
 
-xhr.open('GET', 'https://the-mexican-food-db.p.rapidapi.com/');
-xhr.setRequestHeader('x-rapidapi-key', '265e17224cmshdc788249ea24af8p1f07b8jsn377e42c3c812');
-xhr.setRequestHeader('x-rapidapi-host', 'the-mexican-food-db.p.rapidapi.com');
+			imgContainer.appendChild(image)	
+			card.appendChild(imgContainer)
 
-xhr.send(data);
+			let container = document.createElement("div")
+	        container.classList.add('container')
+
+            let name = document.createElement("h5")
+			name.classList.add("product-name")
+			name.innerText = items.title
+
+			container.appendChild(name)
+			let btn = document.createElement("button")
+			btn.innerHTML = "Xem thêm"
+
+			container.appendChild(btn)
+			card.appendChild(container)
+
+			document.getElementById("products").appendChild(card)
+
+
+
+		}
+
+} catch (error) {
+		console.error(error);
+	}
+}
+
+getData()
