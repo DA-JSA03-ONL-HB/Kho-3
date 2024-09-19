@@ -29,7 +29,7 @@ h4 {
     display: flex;
     justify-content: space-evenly;
 }
-* {
-    margin: 0;
-    padding: 0;
+.head-item {
+    flex-flow: row-reverse;
 }
+
